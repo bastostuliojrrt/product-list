@@ -1,0 +1,26 @@
+<div class="container-product-list-cards">
+    <h3>Lista de Produtos</h3>
+    <!-- Nova forma de realizar o ngIf -->
+    @if(showProductListCards){
+        <ul class="product-list-cards">
+            @for(product of products; track product){
+                <li>
+                    <div class="card" [ngStyle]="{'backgroundColor': ativo ? 'green' : '#d1e4f8'}">
+                        <div class="card-header">
+                            <h3 class="title-card">{{product.productName}}</h3>
+                            <img class="img-category" src="{{product.productCategory}}" alt="Product Category">
+                        </div>
+                        <div class="card-body">
+                            <p class="description-card">R$ {{product.productPrice}}</p>
+                            <p class="description-card">Quantidade: {{product.productQuantity}} UN</p>
+                        </div>
+                    </div>
+                </li>
+            }@empty{
+                <p class="warning-product-list-cards">Não há produtos disponíveis.</p>
+            }
+        </ul>
+    }@else{
+        <p class="warning-product-list-cards">Sem premissão para visualizar lista de produtos.</p>
+    }
+</div>
