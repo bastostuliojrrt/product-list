@@ -1,23 +1,25 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { FormatCepPipe } from '../../pipes/format-cep.pipe';
 
 @Component({
   selector: 'app-card',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,FormatCepPipe],
   templateUrl: './card.component.html',
   styleUrl: './card.component.css'
 })
 export class CardComponent {
 
   showProductListCards: boolean = true;
+  cep: string = '50761010';
   ativo: boolean = false;
   products: any[] = [
 
     {
       productName: 'Acabaxi',
       productCategory: 'https://cdn-icons-png.flaticon.com/512/272/272169.png',
-      productPrice: 5.50,
+      productPrice: 654987.5386,
       productQuantity: 500
     },
     {
