@@ -11,7 +11,7 @@
                             <img class="img-category" src="{{product.productCategory}}" alt="Product Category">
                         </div>
                         <div class="card-body">
-                            <p class="description-card">R$ {{product.productPrice}}</p>
+                            <p class="description-card">{{product.productPrice | currency : 'BRL' : 'R$' : '1.2-2' }}</p>
                             <p class="description-card">Quantidade: {{product.productQuantity}} UN</p>
                         </div>
                     </div>
@@ -20,6 +20,7 @@
                 <p class="warning-product-list-cards">Não há produtos disponíveis.</p>
             }
         </ul>
+
     }@else{
         <p class="warning-product-list-cards">Sem premissão para visualizar lista de produtos.</p>
     }
