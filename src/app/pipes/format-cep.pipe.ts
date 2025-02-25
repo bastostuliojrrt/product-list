@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FormatCepPipe implements PipeTransform {
 
-  transform(value: any, ...args: any[]): unknown {
+  transform(value: any, ...args: any[]): string {
     
     let firstNumbers = value.toString().slice(0, 5);
     let lastNumbers = value.toString().slice(5); 
